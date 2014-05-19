@@ -16,6 +16,7 @@
           target: default              
          ================================= -->
 	<target name="default" depends="depends" description="Builds the calendar widget library">
+		<mkdir dir="bin" />
 		<mkdir dir="target" />
 		<jar destfile="target/calwidget.jar" basedir="bin">
 		</jar>
@@ -40,7 +41,8 @@
           target: depends                      
          - - - - - - - - - - - - - - - - - -->
 	<target name="depends">
-		<tstamp />
+		<mkdir dir="bin" />
+		<javac destdir="bin" srcdir="src" />
 	</target>
 
 </project>
